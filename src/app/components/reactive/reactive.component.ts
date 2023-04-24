@@ -8,21 +8,24 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class ReactiveComponent implements OnInit {
 
-  myForm: FormGroup = new FormGroup({
-    name: new FormControl("",Validators.required),
-    email: new FormControl("",Validators.email)
-  })
+  // Create an instance of Form Group
+  myForm!: FormGroup 
 
   constructor() { }
 
   ngOnInit() {
-    // this.myForm = new FormGroup({
-      // name: ['Sammy', Validators.required],
-      // email: ['', [Validators.required, Validators.email]],
-      // message: ['', [Validators.required, Validators.minLength(15)]],
-    // });
+    this.myForm = new FormGroup({
+      name: new FormControl("",[Validators.required]),
+      email: new FormControl("",[Validators.email]),
+      age:new FormControl("",[Validators.pattern('^[0-9]+$'),Validators.min(10)])
+    });
   }
 
+
+  // Submit event for the form that displays  the value
+  handleSubmit() {
+     console.log(this.myForm.value)
+  }
 
   get myFormControls() {
      return  this.myForm.controls

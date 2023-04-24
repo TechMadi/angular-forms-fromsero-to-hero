@@ -22,6 +22,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
     // Import FormsModule  to  from @angular/Forms enable  Template Driven Forms
     FormsModule,
+
+    // Import  ReactiveFormsModule from @angular/Forms    to enable  Reactive Driven Forms
     ReactiveFormsModule,
     NgbModule
   ],
